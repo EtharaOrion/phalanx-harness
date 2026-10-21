@@ -71,7 +71,7 @@ def _sign_in(page) -> None:
 
 def test_console_invalid_credentials_show_error(page):
     page.goto(f"{ENDPOINT}/console/")
-    page.fill('[data-testid="login-access-key-id"]', "AKIAFAKEFAKEFAKEFAKE")
+    page.fill('[data-testid="login-access-key-id"]', "AKIAFAKEFAKEFEXAMPLE")
     page.fill('[data-testid="login-secret-access-key"]', "x" * 40)
     page.click('[data-testid="login-submit"]')
     page.wait_for_selector('[data-testid="login-error"]:visible', timeout=10_000)

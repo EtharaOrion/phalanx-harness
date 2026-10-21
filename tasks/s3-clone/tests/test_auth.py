@@ -62,7 +62,7 @@ def test_wrong_secret_gives_signature_mismatch(s3_factory, bucket):
 
 
 def test_unknown_access_key_rejected(s3_factory, bucket):
-    bad = s3_factory(access_key="AKIA0000000000000000")
+    bad = s3_factory(access_key="AKIA000000000EXAMPLE")
     with pytest.raises(ClientError) as exc:
         # GET so boto3 can parse the XML body — HEAD responses carry no body.
         bad.list_objects_v2(Bucket=bucket)
